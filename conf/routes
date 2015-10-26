@@ -24,3 +24,5 @@ GET    /assets/*file           controllers.Assets.at(path="/public", file)
 
 # Map the webjar static assets to the /webjars URL
 GET    /webjars/*file          controllers.WebJarAssets.at(file)
+
+GET    /hosts                  controllers.Host.list(p:Int ?= 0)

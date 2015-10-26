@@ -21,6 +21,7 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "org.almoehi" %% "reactive-docker" % "0.1-SNAPSHOT"
 
+includeFilter in (Assets, LessKeys.less) := "*.less"
 
 routesGenerator := InjectedRoutesGenerator
 
