@@ -19,6 +19,9 @@ libraryDependencies ++= Seq(
   "org.webjars" % "respond" % "1.4.2"
 )
 
+libraryDependencies += "org.almoehi" %% "reactive-docker" % "0.1-SNAPSHOT"
+
+
 routesGenerator := InjectedRoutesGenerator
 
 pipelineStages := Seq(rjs)
