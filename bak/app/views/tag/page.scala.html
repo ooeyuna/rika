@@ -1,0 +1,24 @@
+@(currentPage: help.Page[_], controller_method: Int => Any)
+    <ul class="pager" style="padding-bottom: 70px;">
+        @currentPage.prev.map { page =>
+        <li class="previous">
+            <a href="@controller_method(page)">&larr; Previous</a>
+        </li>
+        }.getOrElse {
+            <li class="previous disabled">
+                <a>&larr; Previous</a>
+            </li>
+        }
+        <li class="current">
+            <a>Displaying @(currentPage.offset + 1) to @(currentPage.offset + currentPage.items.size) of @currentPage.total</a>
+        </li>
+        @currentPage.next.map { page =>
+        <li class="next">
+            <a href="@controller_method(page)">Next &rarr;</a>
+        </li>
+        }.getOrElse {
+            <li class="next disabled">
+                <a>Next &rarr;</a>
+            </li>
+        }
+    </ul>
