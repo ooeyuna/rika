@@ -3,12 +3,15 @@
 # ~~~~
 
 # Default path will just redirect to the employee list
-GET    /                       controllers.Host.list(p:Int ?= 1)
+GET    /                       controllers.ServerController.list(p:Int ?= 1)
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file           controllers.Assets.at(path="/public", file)
+GET    /assets/*file        controllers.Assets.at(path="/public", file)
 
 # Map the webjar static assets to the /webjars URL
-GET    /webjars/*file          controllers.WebJarAssets.at(file)
+GET     /webjars/*file      controllers.WebJarAssets.at(file)
 
-GET    /hosts                  controllers.Host.list(p:Int ?= 1)
+GET     /host       controllers.ServerController.list(p:Int ?= 1)
+
+
+GET     /container      controllers.ContainerController.list()

@@ -1,0 +1,35 @@
+@import tag._
+@(currentPage:help.Page[String])(implicit flash: play.api.mvc.Flash)
+
+@main("container") {
+
+    @flash.get("success").map(message =>
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>Well done!</strong> @message
+        </div>
+    )
+    <div class="div-hosts">
+        @Option(currentPage.items).filterNot(_.isEmpty).map { hosts =>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>ip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @hosts.map { host =>
+                        <tr>
+                            <td>1</td>
+                            <td>@host</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+    <div class="div-page">
+        @page(currentPage, routes.Host.list(_))
+    </div>
+}

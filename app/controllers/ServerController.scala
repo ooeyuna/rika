@@ -13,7 +13,7 @@ import scala.concurrent.duration.Duration
 /**
  * Created by rika on 2015/10/24.
  */
-class Host extends Controller{
+class ServerController extends ApplicationController{
 
   def list(page: Int = 1) = Action { implicit request =>
     implicit val docker = Docker("192.168.33.10",4342)
